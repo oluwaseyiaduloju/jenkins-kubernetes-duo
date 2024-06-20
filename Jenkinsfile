@@ -13,7 +13,9 @@ pipeline {
                 sh "kubectl apply -f nginx.yaml"
                 sh "sleep 50"
                 sh "kubectl get svc flask-app"
-                sh "kubectl get svc nginx"
+                sh "kubectl get svc nginx-service"
+                sh "sleep 100"
+                sh "kubectl delete -f ."
             }
         }
     }
